@@ -10,7 +10,8 @@ public class IOManager {
     private final String outName = "out.txt";
     private final Reader reader = new Reader(inName);
     private final Writer writer = new Writer(outName);
-    private LinkedList<String> stack = new LinkedList<String>();
+    //private LinkedList<String> stack = new LinkedList<String>();
+    private Deque<String> stack = new ArrayDeque<>();
 
     private void readLine() throws IOException {
         String words = reader.readString();

@@ -21,6 +21,10 @@ public class CollectionsTest {
 
     private static List<Map.Entry<String,Integer>> sortArray(TreeMap<String, Integer> array) {
         List<Map.Entry<String,Integer>> list = new ArrayList(array.entrySet());
+        //list.sort(Map.Entry.comparingByValue());  //По возрастанию, а надо по убыванию
+        list.sort((e1,e2) -> e2.getValue().compareTo(e1.getValue()));
+        /*
+        Comparator.comparing(Map.Entry.comparingByValue());
         Collections.sort(list, new Comparator<Map.Entry<String,Integer>>() {
                 @Override
                 public int compare(Map.Entry<String,Integer> e1, Map.Entry<String,Integer> e2) {
@@ -28,6 +32,7 @@ public class CollectionsTest {
                 }
             }
         );
+        */
         return list;
     }
 
